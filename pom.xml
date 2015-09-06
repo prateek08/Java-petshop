@@ -182,14 +182,14 @@
 		</dependency>
 
 		<!-- Databases - Uses HSQL by default -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
+		-->
 		<!-- For MySql only -->
-		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> </dependency> -->
+		<dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> </dependency>
 		<!-- HIBERNATE -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -304,7 +304,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.3</version>
 				<configuration>
-					<warName>petclinic</warName>
+					<warName>spring-petclinic-1.0.0-SNAPSHOT</warName>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -348,9 +348,10 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<server>tomcat-development-server</server>
-					<port>9966</port>
+					<url>http://10.199.107.147:8080/manager</url>
+					<server>tomcat</server>
 					<path>/petclinic</path>
+					<warFile>target/petclinic.war</warFile>
 				</configuration>
 			</plugin>
 			 <plugin>
